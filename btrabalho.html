@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equação de primeiro grau</title><link rel="stylesheet" href="ístilu.css">
+</head>
+<body>
+
+
+
+    <h1>
+Equação e função do 1° grau
+
+    </h1>
+    <h2>
+        
+<p>
+temos 2 formas de fazer o método de substituição e o metodo de adição
+
+o método de Substituição, <br>
+<br>
+O método de substituição Consiste em substituir uma equação na outra.
+
+2x + 5y = 14
+
+x + 2 = 16
+<br>
+<br>Isolando o x na segunda equação, temos:
+
+2x + 5y = 14
+x = 16 - 2
+<br>
+<br>Descobrimos assim a primeira variável:
+
+x = 14
+<br>
+<br>Substituindo na equação anterior, temos:
+
+2.(14) + 5y = 14 → 28 +5y = 14<br>
+<br>
+Desse modo, basta fazer a operação para encontrar o y:
+
+28 +5y = 14
+5y = 14 - 28
+5y = -14
+y = -14/5 (14 sobre 5)
+
+<br>
+<br>
+Pronto, o resultado é:  
+
+x = 14
+y = -14/5 (14 sobre 5) 
+
+</p>
+
+    </h1>
+
+    <h2> E Agora o Método de adição
+
+    
+<p>
+    Adição 
+    Consiste em somar duas equações de modo que uma das incógnitas se anule.
+    
+    Para isso, os coeficientes precisam ter sinais opostos. Vamos conferir o exemplo:
+    
+    3x + 4y = 36
+    x - 4y = 20
+    <br>
+    <br> Somando as duas equações, temos:
+    
+     (3x +4y) + (x - 4y) = 36 + 20
+    <br>
+    <br>Somando +4y com -4y, o resultado fica zero. Portanto, ficamos com:  
+    
+    (3x + 4y) + (x - 4y) = 56
+    3x + x = 56
+    <br>
+    <br>Agora, basta somar a equação e encontrar o valor de x:  
+    
+    3x + x = 56
+    
+    4x = 56
+    x = 56/4
+    
+    x = 14
+    <br>
+    
+    <br> Substituindo o x na segunda equação, descobrimos o valor de y:  
+    
+    x - 4y = 20
+    14 - 4y = 20
+    -4y = 20 - 14
+    -4y = 6  
+    <br>
+    <br>Como a incógnita não pode ficar negativa, precisamos multiplicar por (-1), ficando: 
+    
+    -4y = 6 . (-1)
+    4y = - 6
+    y = - 6/4
+    y = -3/2<br>
+    
+    <br>Encontramos os valores de nossas incógnitas:  
+    
+    x = 14
+    y = -3/2
+
+    <br>
+    <br>
+
+    E se os valores das incógnitas não forem opostos? 
+Essa é uma dúvida bem comum quando os estudantes utilizam métodos de adição para resolver equações de primeiro e segundo grau.
+
+<br>Caso os valores não sejam opostos, como no exemplo abaixo:  
+
+2x + 8y = 56
+x - 2y = -14
+
+<br>Você pode multiplicar uma das equações de modo que incógnitas fiquem opostas. Nesse caso, multiplicaremos a segunda equação por -2. Confira:  
+
+2x + 8y = 56
+x - 2y = -14 (.-2) → - 2x + 4y = +28 
+
+<br>Importante:  
+
+<br>Você precisa multiplicar toda operação e não apenas a incógnita desejada;
+<br>Você precisa mudar o sinal de toda equação.
+<br>Portanto, ficamos:  
+
+2x + 8y = 56
+- 2x + 4y = +28
+<br>
+Basta fazer aquele processo que já conhecemos:  
+<br>
+<br>2x + 8y + (- 2x + 4y) = 56 +28
+<br>2x + 8y + (- 2x + 4y) = 56 +28
+<br>8y + 4y = 84
+<br>12y = 84
+<br>y = 84/12
+<br>y = 7
+
+<br>x - 2y = -14
+<br>x - 2.7 = -14
+<br>x = 28 
+<br>
+<br>Para quem tem mais prática, o método de adição pode ser um pouco mais rápido para o Enem.  PRATIQUEM
+</p>
+    </h2>
+
+
+    <h3>
+        aqui Está coloque sua equação de 1 Grau para Resolvermos
+    </h3>
+
+
+
+<script src="bj@v@.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Equações de 1º Grau</title>
+</head>
+<body>
+    <h1>Calculadora de Equações de 1º Grau</h1>
+    <p>Insira uma equação na forma "ax + b = 0"</p>
+    <input type="text" id="equation" placeholder="Exemplo: 2x + 5 = 0">
+    <button onclick="solveEquation()">Calcular</button>
+    <p>Resultado: <span id="result"></span></p>
+
+    <h2>Passo a Passo</h2>
+    <pre id="steps"></pre>
+
+    <script>
+        function solveEquation() {
+            const equationInput = document.getElementById("equation").value;
+            const equation = equationInput.replace(/\s+/g, ''); // Remover espaços em branco
+            const pattern = /([-+]?\d*)x([-+]?\d*)=0/;
+
+            const match = equation.match(pattern);
+            if (!match) {
+                document.getElementById("result").innerText = "Equação inválida";
+                document.getElementById("steps").innerText = "";
+                return;
+            }
+
+            const a = parseInt(match[1]);
+            const b = parseInt(match[2]);
+
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerText = "Coeficientes inválidos";
+                document.getElementById("steps").innerText = "";
+            } else if (a === 0) {
+                document.getElementById("result").innerText = "A equação não é de primeiro grau";
+                document.getElementById("steps").innerText = "";
+            } else {
+                const x = -b / a;
+                document.getElementById("result").innerText = "x = " + x;
+
+                // Gerar o passo a passo
+                const steps = [];
+                let simplifiedEquation = equationInput; // Iniciar com a equação original
+
+                steps.push(`${equationInput}`); // Exibir a equação original
+
+                while (simplifiedEquation.includes('x')) {
+                    const index = simplifiedEquation.indexOf('x');
+                    let side = 'esquerda';
+                    if (index > simplifiedEquation.length / 2) {
+                        side = 'direita';
+                    }
+
+                    const simplifiedStep = simplifiedEquation.replace('x', '');
+                    steps.push(simplifiedStep);
+
+                    simplifiedEquation = simplifiedStep;
+                }
+
+                // Exibir o passo a passo
+                document.getElementById("steps").innerHTML = steps.join("<br>");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+</body>
+</html>
